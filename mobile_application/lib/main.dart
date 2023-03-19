@@ -221,12 +221,14 @@ class _MyAppState extends State<MyApp> {
                 }
               }
             } catch (e) {
+              if(!_scanning) toggleScan();
               // print("error_invalid_advertisement");
             }
           }
         });
       } else {
         print("error_no_permissions");
+        if(!_scanning) toggleScan();
       }
     } else {
       _scanning = false;
